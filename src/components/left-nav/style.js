@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 
 export const LeftNavWrapper = styled.div`
+   
     .left-nav{
+        
        .left-nav-header{
            display:flex;
            align-items:center; //居中对齐弹性盒的各项 <div> 元素：

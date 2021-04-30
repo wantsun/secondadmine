@@ -29,12 +29,20 @@ export default class Admin extends Component {
             return <Redirect to="/login" />
         }
         return (
-            <Layout style={{ height: '100%' }}>
-                <Sider><LeftNav /></Sider>
-                <Layout>
-                    <Header style={{  backgroundColor: '#f0f2f5' }} />
-                    <Content style={{  margin:20,backgroundColor: 'white' }}>
-                        <Switch>
+            <Layout style={{minHeight: '100%'}}>
+                <Sider
+               style={{
+                overflow: 'auto',
+                height: '100vh',
+                position: 'fixed',
+                left: 0,
+              }}
+            
+                ><LeftNav /></Sider>
+                <Layout style={{ marginLeft: 200}}>
+                    <Header  />
+                    <Content style={{  margin: 20, backgroundColor: '#fff' }}>
+                        <Switch >
                             <Route path='/home' component={Home} />
                             <Route path='/category' component={Category} />
                             <Route path='/product' component={Product} />
@@ -46,7 +54,7 @@ export default class Admin extends Component {
                             <Redirect to='/home'/>
                         </Switch>
                     </Content>
-                    <Footer style={{ textAlign: 'center', color: '#aaaaaa' }}>推荐使用谷歌浏览器，
+                    <Footer style={{ textAlign: 'center'}}>推荐使用谷歌浏览器，
 可以获得更佳页面操作体验</Footer>
                 </Layout>
             </Layout>

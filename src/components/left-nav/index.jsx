@@ -53,10 +53,15 @@ const { SubMenu } = Menu
           </Menu.Item>
         ))
       } else {
-        //查找一个与当前请求路径匹配的子Item
-        item.children.find(cItem=>cItem.key===path)
-        //如果存在,说明当前item的子列表需要打开
-        this.openKey =item.key; 
+        const cItem = item.children.find(
+          (cItem) => 0 === path.indexOf(cItem.key)
+        );
+        //如果存在，说明当前item的子列表需要打开
+        if (cItem) {
+          this.openkey = item.key;
+        }
+        
+       
 
         //向pre添加<SubMenu》
         pre.push((
@@ -77,12 +82,16 @@ const { SubMenu } = Menu
 
   render() {
     //得到当前请求的路由路径  
-    const path=this.props.location.pathname; 
+    let path=this.props.location.pathname; 
     console.log(path)
+    if(path.indexOf('/product')===0){//当前请求的是商品或者子路由路径
+      path='/product';
+    }
 
+    
     //得到需要打开菜单项的key
     const openKey =this.openKey;
-
+  
     return (
       <LeftNavWrapper >
         <div className='left-nav'>

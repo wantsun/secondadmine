@@ -11,7 +11,7 @@ import ajax from "./ajax.jsx";
 export const reqLogin = (username, password) =>
   ajax("/login", { username, password }, "POST");
 //添加或更新用户
-export const reqAddOrUpdateUser = (user) => ajax("http://120.55.193.14:5000/manage/user/"+(user._id?'update':'add'), user, "POST");
+export const reqAddOrUpdateUser = (user) => ajax("http://localhost:5000/manage/user/"+(user._id?'update':'add'), user, "POST");
 
 
 /* jsonp请求的接口请求函数 */   
@@ -47,36 +47,36 @@ export const reqUpdateCategory = (categoryId, categoryName) =>
 
 export const reqProducts = (pageNum, pageSize) =>
   ajax(
-    `http://120.55.193.14:5000/manage/product/list?pageNum=${pageNum}&pageSize=${pageSize}`
+    `http://localhost:5000/manage/product/list?pageNum=${pageNum}&pageSize=${pageSize}`
     //`/manage/product/list?pageNum=${pageNum}&pageSize=${pageSize}`也可以
   );
 /* 搜索商品分页列表,或者根据商品描述，或者商品名称 */ 
 //searchType:搜索的类型，productName/productDesc
 export const reqProductsSearch = ( pageNum, pageSize , searchName,searchType) =>
   ajax(
-    'http://120.55.193.14:5000/manage/product/search',
+    'http://localhost:5000/manage/product/search',
     { pageNum, pageSize, [searchType]:searchName } //[searchType]:searchName 变量的名作为属性值
   );
 
   /* 获取一个分类 */
-  export const reqCategory = (categoryId) => ajax('http://120.55.193.14:5000/manage/category/info',{categoryId})
+  export const reqCategory = (categoryId) => ajax('http://localhost:5000/manage/category/info',{categoryId})
   /* 更新商品的状态(上/下) */
-  export const reqUpdateStatus = (productId,status) => ajax('http://120.55.193.14:5000/manage/product/updateStatus',{productId,status},'post')
+  export const reqUpdateStatus = (productId,status) => ajax('http://localhost:5000/manage/product/updateStatus',{productId,status},'post')
   
   //添加/修改商品  //多加一个/
-  export const reqAddProduct = (product) => ajax('http://120.55.193.14:5000/manage/product/'+(product._id?'update':'add'),product,'post')//这个本身是对象，所以不用加{}
+  export const reqAddProduct = (product) => ajax('http://localhost:5000/manage/product/'+(product._id?'update':'add'),product,'post')//这个本身是对象，所以不用加{}
   
   //删除指定名称的图片
-  export const reqDelImg = (name) => ajax('http://120.55.193.14:5000/manage/img/delete',{name},'post')
+  export const reqDelImg = (name) => ajax('http://localhost:5000/manage/img/delete',{name},'post')
   //获取所有角色列表
-  export const reqRoleList = () => ajax('http://120.55.193.14:5000/manage/role/list')
+  export const reqRoleList = () => ajax('http://localhost:5000/manage/role/list')
   //添加角色   //参数加{}要求名字对应 不加要求顺序对应
-  export const reqAddRole = (roleName) => ajax('http://120.55.193.14:5000/manage/role/add',{roleName},'post')
+  export const reqAddRole = (roleName) => ajax('http://localhost:5000/manage/role/add',{roleName},'post')
 //更新权限
-  export const reqUpdateRole = (role) => ajax('http://120.55.193.14:5000/manage/role/update',role,'post')
+  export const reqUpdateRole = (role) => ajax('http://localhost:5000/manage/role/update',role,'post')
   //获取用户列表所有
-  export const reqUsers = () => ajax('http://120.55.193.14:5000/manage/user/list')
+  export const reqUsers = () => ajax('http://localhost:5000/manage/user/list')
   //删除指定用户
-  export const reqDelUser = (userId) => ajax('http://120.55.193.14:5000/manage/user/delete',{userId},'post')
+  export const reqDelUser = (userId) => ajax('http://localhost:5000/manage/user/delete',{userId},'post')
   //添加用户
   // export const reqAddUser = (user) => ajax('http://120.55.193.14:5000/manage/user/add',{user},'post')
