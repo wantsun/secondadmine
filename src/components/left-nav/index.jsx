@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { LeftNavWrapper } from './style'
-import logo from '../../assets/img/logo.png'
+import logo1 from '../../assets/img/logo1.jpg'
 import { Link,withRouter} from 'react-router-dom';
 import menuList from '../../config/menuConfig';
 import { Menu } from 'antd';
@@ -96,8 +96,8 @@ const { SubMenu } = Menu
       <LeftNavWrapper >
         <div className='left-nav'>
           <Link to='/' className='left-nav-header'>
-            <img src={logo} alt="logo" />
-            <h1>硅谷后台</h1>
+            <img src={logo1} alt="logo" />
+            <h1>管理后台</h1>
           </Link>
         </div>
         <Menu

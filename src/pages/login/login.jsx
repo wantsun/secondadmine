@@ -57,7 +57,7 @@ export default class Login extends PureComponent {
                 <div className="login">
                     <header className="login-header">
                         <img src={logo} alt="logo" />
-                        <h1>react项目管理:后台管理系统</h1>
+                        <h1>老徐二手图书后台管理系统</h1>
                     </header>
                     <section className="login-content">
                         <h2>用户登录</h2>

@@ -1,3 +1,3 @@
 /* 包含一些常量 */
 export const PAGE_SIZE=3//每页显示的条数
-export const BASE_IMG_URL = 'https://picsum.photos/'  
+export const BASE_IMG_URL = 'http://localhost:5000/upload/'  

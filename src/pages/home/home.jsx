@@ -7,7 +7,7 @@ export default class Home extends PureComponent {
         return (
             <HomeWrapper>
               <div className='home'>
-                欢迎使用硅谷后台管理系统
+                欢迎使用老徐二手书籍后台管理系统
             </div>
             </HomeWrapper>
         );
